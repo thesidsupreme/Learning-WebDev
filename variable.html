@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variabler    </title>
+    <style>
+
+        :root{
+                /* --color: rgb(190, 114, 28); */
+                --secondary:rgb(186, 149, 26);
+
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            background-color: var(--color);
+         
+        }
+        .container{
+
+            background-color: var(--secondary);
+        }
+        ul li{
+            list-style-type: none;
+            padding: 32px;
+        }
+
+        ul{
+            display: flex;
+        }
+
+        ul li:first-child{
+            --color: rgb(39, 28, 190);
+            background-color: var(--color, rgb(56, 180, 34) );
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home </li>
+            <li>About </li>
+            <li>Report </li>
+        
+        
+        </ul>
+    </div>
+    <div class="container">
+        this is a container  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, blanditiis similique dolorem sit, commodi, maxime quisquam qui necessitatibus officiis unde odio accusantium. Architecto pariatur iusto ex eligendi, voluptate tempore eum illum cumque! Nam officiis vero non excepturi temporibus! Labore omnis fuga veritatis quo eligendi nemo?
+
+    </div>
+</body>
+</html>

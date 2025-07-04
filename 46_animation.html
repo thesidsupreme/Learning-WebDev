@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: thistle;
+            height: 50vh;
+            width: 50vw;
+            margin: 50px auto 50px;
+            
+        }
+        .box{
+            margin: 50px auto 50px;
+            
+            background-color: rgb(46, 163, 246);
+            height: 5vh;
+            width: 5vw;
+            animation: SIDanimation 3s 2s infinite;
+            }
+        @keyframes SIDanimation{
+            from{
+                background-color: red;
+            }
+            to{
+                transform: translateX(300px);
+                background-color: bisque;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            BOX for animation
+        </div>
+    </div>
+</body>
+</html>

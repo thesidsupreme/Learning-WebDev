@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balll bounce animation</title>
+    <style>
+        .box{
+            height: 500px;
+            width: 500px;
+            background-color: blue;
+            border: 2px solid black;
+            position: relative;
+        }
+        .ball{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            border-radius: 30px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: animationX 1s ease-out infinite alternate, animationY 3s linear infinite;
+
+
+        }
+        @keyframes animationX {
+            from{
+                bottom: 0%;
+            }
+            to{
+                bottom: 90%;
+            }
+        }
+        @keyframes animationY {
+            from{
+                left: 0%;
+
+            }
+            to{
+                left: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="ball"></div>
+        </div>
+    </div>
+</body>
+</html>
