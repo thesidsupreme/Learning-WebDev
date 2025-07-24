@@ -9,7 +9,7 @@ async function getData() {
    let api = fetch('https://jsonplaceholder.typicode.com/todos/1')
    let data = (await api).text()
    console.log(data);
-   return(data)
+   return(dataa)
       
 
 }
