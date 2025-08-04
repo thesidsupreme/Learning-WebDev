@@ -20,7 +20,8 @@
 
 
 class Animal{
-    constructor(){
+    constructor(name){
+        this.name = name;
         console.log("Object is Created.......")
     }
     eats(){
@@ -31,5 +32,12 @@ class Animal{
     }
 }
 
-let a = new Animal();   
+class Lion extends Animal{
+
+}
+
+let a = new Animal("katie perry");   
 console.log(a)
+
+let l = new Lion("Shera")
+console.log(l)
