@@ -1,0 +1,23 @@
+{
+  "name": "web-development",
+  "version": "1.0.0",
+  "main": "78.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesidsupreme/Learning-WebDev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thesidsupreme/Learning-WebDev/issues"
+  },
+  "homepage": "https://github.com/thesidsupreme/Learning-WebDev#readme",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^4.1.12"
+  }
+}
