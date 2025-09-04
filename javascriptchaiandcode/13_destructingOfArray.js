@@ -6,4 +6,4 @@ const course = {
 
 const {instructor: inst} = course;
 
-console.log(inst)
+console.log(i)
