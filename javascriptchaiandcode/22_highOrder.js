@@ -33,5 +33,23 @@ for (const [key,value] of map) {
     console.log(key, "this is value : ", value)
 }
 
+// for in 
+
+const myobj = {
+    cpp:"c++",
+    py:"python",
+    java : "java",
+    js : "javaScript"
+}
+
+for (const key in myobj) {                  // to get the key
+    console.log(key)
+}
+for (const key in myobj) {                  // to get the object
+    console.log(myobj[key])
+}
+for (const key in myobj) {                  // to get key object both
+    console.log(`key ${key} and its value : ${myobj[key]}`)
+}
 
 
