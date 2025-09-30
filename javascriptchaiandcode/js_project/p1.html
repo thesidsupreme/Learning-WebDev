@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Switecher</title>
+    <style>
+        .white,.purple,.red,.green,.rand {
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+            margin: 10px;
+            margin-top: 40vh;
+            
+
+        }
+        .white{
+            background-color: white;
+        }
+        .purple{
+            background-color: purple;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .rand{
+            background-color: rgb(0, 0, 0);
+        }
+        .colour-button{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="colour-button">
+        <div class="white"></div>
+        <div class="purple"></div>
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="rand"></div>
+
+    </div>
+    <script>
+        const purple = document.querySelector(".purple")
+        purple.addEventListener("click",function() {
+            document.querySelector("body").style.backgroundColor="purple";
+        })
+        
+        const red = document.querySelector(".red")
+        red.addEventListener("click",function() {
+            document.querySelector("body").style.backgroundColor="red";
+        })
+
+        
+        const green = document.querySelector(".green")
+        green.addEventListener("click",function() {
+            document.querySelector("body").style.backgroundColor="green";
+        })
+
+        const white = document.querySelector(".white")
+        white.addEventListener("click",function() {
+            document.querySelector("body").style.backgroundColor="white";
+        })
+
+
+
+    </script>
+</body>
+</html>
