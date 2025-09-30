@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last few things</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul class="programmingLang">
+        <li>JavaScript</li>
+
+
+    </ul>
+</body>
+<script>
+    function newListItem(langName) {
+        const list = document.createElement("li")
+        list.innerText = langName
+    
+        document.querySelector(".programmingLang").appendChild(list)
+        
+    }
+    
+
+    function newListOpt(langName) {
+        const list = document.createElement("li")
+        const textnode = document.createTextNode(langName)
+        list.appendChild(textnode)
+
+        document.querySelector(".programmingLang").appendChild(list)
+    }
+    newListOpt("typescript")
+
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML="Got it whatever  i write will a"
+    const secondLangText = docuemnt.createTextNode("this is my node")
+    secondLang.appendChild(secondLangText)
+
+</script>
+</html>
