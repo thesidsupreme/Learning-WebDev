@@ -1,12 +1,74 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMI calculator</title>
-</head>
-<body>
-    <div class="container">BMI calculator
-        .[]
+    <style>
+      .btn {
+        height: 40px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        margin: auto;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        align-items: center;
+        margin-top: 30vh;
+      }
+      .result {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        margin: auto;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BMI calculator</h1>
+      <form>
+        <p>
+          <label for="height in ">height in cm</label>
+          <input type="text" id="height" />
+        </p>
+        <p>
+          <label for="">Weight in Kg</label>
+          <input type="text" name="" id="weight" />
+        </p>
+
+        <button class="btn">Calculate BMI</button>
+        <div class="result">
+          <h2>result :</h2>
+          <div id="result"></div>
+        </div>
+      </form>
     </div>
-</body>
+
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (val) {
+        val.preventDefault();
+
+        const height = parseInt(document.querySelector("#height").value);
+        console.log(`height is ${height}`);
+        const weight = parseInt(document.querySelector("#weight").value);
+        console.log(`weight is ${weight}`);
+        const result = document.querySelector("#result");
+
+        if (height === "" || height < 0 || isNaN(height)) {
+          result.innerHTML = `Enter A Valid Height`;
+        } else if (weight === "" || weight < 0 || isNaN(weight)) {
+          result.innerHTML = `Enter A Valid weight`;
+        }else{
+            const bmi = (weight/(height/100)**2).toFixed(2)
+            result.innerHTML = `<span>${bmi}</span>`
+        }
+      });
+    </script>
+  </body>
 </html>
