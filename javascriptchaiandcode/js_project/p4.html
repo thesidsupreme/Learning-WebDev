@@ -1,0 +1,168 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      margin: 10px;
+      padding: 10px;
+      max-width: 40vw;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+      margin: auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    .submit {
+      padding: 10px;
+      font-size: large;
+      font-weight: 600;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>Guess The Number</h1>
+      <p>try and guess a random Number between 1 and 100.</p>
+      <p>10 Attempts to guess the right number</p>
+      <form action="">
+        <input type="text" class="guessField" />
+        <input type="submit" class="submit" />
+      </form>
+
+      <div class="result"> </div>
+
+      <div class="previous-guess">
+        <span>previous-guess:</span>
+        <span class="already-guess"></span>
+      </div>
+
+      <div class="guess-remain">
+        <span>Guess remaining:</span>
+        <span class="gr">10</span>
+      </div>
+    </div>
+
+    <!-- <script>
+      const randomNumber = Math.round(Math.random() * 100 + 1);
+      const form = document.querySelector("form");
+      const result = document.querySelector(".result");
+      console.log(randomNumber);
+      const previousGuess = document.querySelector(".previous-guess");
+      const guessRemain = document.querySelector(".gr");
+
+      const num = 10;
+      form.addEventListener("submit", function (val) {
+        val.preventDefault();
+
+        const number = parseInt(document.querySelector(".number").value);
+        if (number > 100 || number < 0 || isNaN(number)) {
+          result.innerHTML = `Please Add Number BTW 1 to 100`;
+        } else if (randomNumber == number) {
+          result.innerHTML = `<strong>Congrats You WON</Strong>`;
+        } else if (randomNumber > number) {
+          result.innerHTML = `<strong>Higher</Strong>`;
+        } else {
+          result.innerHTML = `<strong>Lower</Strong>`;
+        }
+
+        const guess = previousGuess.append(`${number} `);
+        
+      });
+      
+
+      function numberOfGuess(guess) {
+        
+      }
+    </script> -->
+    <script>
+      const random = parseInt(Math.random() * 100 + 1);
+      const guessSlot = [];
+      let guessLeft = 1;
+      const guessField = document.querySelector(".guessField");
+      const submit = document.querySelector(".submit");
+      const result = document.querySelector(".result");
+      const game = true;
+      const alreadyGuess = document.querySelector(".already-guess")
+      const guessRemain = document.querySelector(".gr")
+      console.log(random)
+
+      if (game) {
+        submit.addEventListener("click", function (val) {
+          val.preventDefault();
+          const guess = parseInt(guessField.value);
+          validateGuess(guess);
+        });
+      }
+
+      function validateGuess(guess) {
+        if (isNaN(guess)) {
+          result.innerHTML = "<strong> add number </strong>";
+        } else if (guess < 0) {
+          result.innerHTML = "<strong> Add Number Greater than 0 </strong>";
+        } else if (guess > 100) {
+          result.innerHTML = "<strong> Add Number Less than 100 </strong>";
+        } else if (guessLeft > 10) {
+          result.innerHTML = "<strong> GAME OVA </strong>";
+          // displayGuess()
+          endgame()
+        }
+        else{
+          guessSlot.push(guess)
+          checkGuess(guess)
+          displayGuess(guess)
+        }
+      }
+      function checkGuess(guess) {
+        if(guess===random){
+          
+          result.innerHTML = "<strong> YOU WON </strong>";
+          endgame()
+        }else if(guess>random){
+          
+          result.innerHTML = "<strong> LOWER!!! </strong>";
+        }
+        else if(guess<random){
+          
+          result.innerHTML = "<strong> HIGHERRRRR!!! </strong>";
+        }
+      }
+
+      function displayGuess(guess) {
+        guessField.value=" "
+        guessSlot.innerHTML += `${guess}, `
+        alreadyGuess.innerHTML = `${guessSlot}`
+        guessLeft++
+        // console.log(guessLeft)
+        guessRemain.innerHTML=`${11-guessLeft}`
+        // console.log(guessRemain)
+
+        
+      }
+      function displayMessage(message) {
+        //
+      }
+
+      function newGame() {
+        //
+      }
+
+      function endgame() {
+        guessField.value= " ";
+        guessField.setAttribute("disabled"," ")
+        result.innerHTML= "GAME OVA"
+      }
+    </script>
+  </body>
+</html>

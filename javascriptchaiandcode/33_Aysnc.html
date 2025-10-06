@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async await </title>
+</head>
+<body>
+    <h1>Sid</h1>
+    <button id="stop">STOP CHANGING</button>
+</body>
+<script>
+
+const print = () => {
+  document.querySelector("h1").innerHTML= "THIS has changed after few seconds"
+}
+
+   const changeName = setTimeout(print,4000)
+
+   const button = document.querySelector("#stop")
+   button.addEventListener("click",() => {
+     clearTimeout(changeName)
+     console.log("it has stopped")
+   }
+   )
+
+    
+</script>
+</html>

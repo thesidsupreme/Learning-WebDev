@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background:#414141;
+        }
+        #btn{
+            padding: 30px;
+            padding-right: 60px;
+            padding-left: 60px;
+            display: flex;
+            margin: auto;
+            margin-top: 45vh;
+            border-radius: 70px;
+            background-color: rgb(249, 171, 25);
+            
+            
+        }
+        #btn:hover{
+            background-color: rgb(255, 166, 0);
+            transform: scale(1.05);
+            border: 3px solid;
+            font-size: large;
+
+            
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com/">
+    <button id="btn">
+            GOOGle
+        </button>
+    </a>
+</body>
+
+<script>
+    const button = document.getElementById("btn")
+    button.addEventListener("click",function(e){
+        e.preventDefault();
+        const remove = e.target.parentNode
+        remove.remove();
+    }, false)
+
+    
+
+
+</script>
+</html>
