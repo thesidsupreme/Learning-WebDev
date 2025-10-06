@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>background colour change</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      margin: auto;
+      display: flex;
+
+      margin: 10px;
+      padding: 10px;
+    }
+    button {
+      height: 30px;
+      width: 80px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    #start {
+      background: rgb(69, 238, 69);
+    }
+    #stop {
+      background: red;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>To Change background Colour Press</h1>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+  </body>
+  <script>
+    const randomColor = function () {
+      const rand1 = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+      const rand2 = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+      const rand3 = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+      document.querySelector(
+        "body"
+      ).style.backgroundColor = `rgb(${rand1},${rand2},${rand3})`;
+    };
+    let setIntervalId
+    const start = document
+      .querySelector("#start")
+      .addEventListener("click", function () {
+        setIntervalId = setInterval(randomColor, 1000);
+      });
+
+    const stop = document.querySelector("#stop").addEventListener("click",() => {
+      clearInterval(setIntervalId)
+      setIntervalId=null;
+    }
+    )
+  </script>
+</html>
