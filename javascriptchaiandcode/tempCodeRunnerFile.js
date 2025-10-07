@@ -1,2 +1,3 @@
-allHeros = marvelHeros.concat(dcHeros)
-// console.log(allHeros)
+.catch(function(){
+//     console.log("cashed")
+// })
